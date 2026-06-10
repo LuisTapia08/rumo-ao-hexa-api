@@ -4,3 +4,5 @@
 setup/__pycache__/
 
 *.pyc
+
+.venv
