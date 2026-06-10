@@ -13,12 +13,21 @@ class ModelBase(models.Model):
 
 
 class Person(ModelBase):
+    class ShirtSize(models.TextChoices):
+        XS = "XS", "Extra Small"
+        S = "S", "Small"
+        M = "M", "Medium"
+        L = "L", "Large"
+        XL = "XL", "Extra Large"
+
     name = models.CharField(max_length=255)
     birth_date = models.DateField()
     height = models.FloatField()
     weight = models.FloatField()
     foot_size = models.FloatField()
-    shirt_size = models.CharField(max_length=10)
+    shirt_size = models.CharField(
+        max_length=2, choices=ShirtSize.choices, null=True, blank=True
+    )
 
     def __str__(self):
         return self.name
@@ -30,7 +39,6 @@ class Person(ModelBase):
 class TeamGroup(ModelBase):
     name = models.CharField(max_length=50)
     description = models.TextField()
-    teams = models.ManyToManyField("Team", related_name="team_groups")
 
     class Meta:
         verbose_name = "Team Group"
@@ -62,6 +70,9 @@ class Team(ModelBase):
     name = models.CharField(max_length=255)
     federation = models.CharField(max_length=255)
     year_founded = models.IntegerField()
+    team_group = models.ForeignKey(
+        TeamGroup, on_delete=models.CASCADE, related_name="teams", null=True, blank=True
+    )
 
     def __str__(self):
         return self.name
