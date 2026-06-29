@@ -1,36 +1,58 @@
 from rest_framework import serializers
 
-from .models import Coach, Player, Team, TeamGroup
+from core import models
 
 
-class TeamGroupSerializer(serializers.ModelSerializer):
+class ModelSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
+    is_active = serializers.BooleanField()
+    created_at = serializers.DateTimeField(read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
 
     class Meta:
-        model = TeamGroup
+        model = models.ModelBase
         fields = "__all__"
 
 
-class TeamSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-
+class TeamGroupSerializer(ModelSerializer):
     class Meta:
-        model = Team
+        model = models.TeamGroup
         fields = "__all__"
 
 
-class PlayerSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-    team = TeamSerializer(read_only=True)
-
+class TeamSerializer(ModelSerializer):
     class Meta:
-        model = Player
+        model = models.Team
         fields = "__all__"
 
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation["team_group"] = (
+            instance.team_group.name if instance.team_group else "Fora da copa"
+        )
+        return representation
 
-class CoachSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
 
+class PlayerSerializer(ModelSerializer):
     class Meta:
-        model = Coach
+        model = models.Player
         fields = "__all__"
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation["team"] = instance.team.name
+        representation["shirt_size"] = instance.get_shirt_size_display()
+        representation["position"] = instance.get_position_display()
+        representation["foot_preference"] = instance.get_foot_preference_display()
+        return representation
+
+
+class CoachSerializer(ModelSerializer):
+    class Meta:
+        model = models.Coach
+        fields = "__all__"
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation["shirt_size"] = instance.get_shirt_size_display()
+        return representation
