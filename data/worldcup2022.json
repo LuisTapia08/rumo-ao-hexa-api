@@ -1,0 +1,2547 @@
+{
+  "groups": [
+    {
+      "name": "Grupo A",
+      "teams": [
+        "Catar",
+        "Equador",
+        "Senegal",
+        "Holanda"
+      ]
+    },
+    {
+      "name": "Grupo B",
+      "teams": [
+        "Inglaterra",
+        "Irã",
+        "Estados Unidos",
+        "País de Gales"
+      ]
+    },
+    {
+      "name": "Grupo C",
+      "teams": [
+        "Argentina",
+        "Arábia Saudita",
+        "México",
+        "Polônia"
+      ]
+    },
+    {
+      "name": "Grupo D",
+      "teams": [
+        "França",
+        "Austrália",
+        "Dinamarca",
+        "Tunísia"
+      ]
+    },
+    {
+      "name": "Grupo E",
+      "teams": [
+        "Espanha",
+        "Costa Rica",
+        "Alemanha",
+        "Japão"
+      ]
+    },
+    {
+      "name": "Grupo F",
+      "teams": [
+        "Bélgica",
+        "Canadá",
+        "Marrocos",
+        "Croácia"
+      ]
+    },
+    {
+      "name": "Grupo G",
+      "teams": [
+        "Brasil",
+        "Sérvia",
+        "Suíça",
+        "Camarões"
+      ]
+    },
+    {
+      "name": "Grupo H",
+      "teams": [
+        "Portugal",
+        "Gana",
+        "Uruguai",
+        "Coreia do Sul"
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "name": "Catar",
+      "federation": "QFA",
+      "coach": "Félix Sánchez"
+    },
+    {
+      "name": "Equador",
+      "federation": "FEF",
+      "coach": "Gustavo Alfaro"
+    },
+    {
+      "name": "Senegal",
+      "federation": "FSF",
+      "coach": "Aliou Cissé"
+    },
+    {
+      "name": "Holanda",
+      "federation": "KNVB",
+      "coach": "Louis van Gaal"
+    },
+    {
+      "name": "Inglaterra",
+      "federation": "FA",
+      "coach": "Gareth Southgate"
+    },
+    {
+      "name": "Irã",
+      "federation": "FFIRI",
+      "coach": "Carlos Queiroz"
+    },
+    {
+      "name": "Estados Unidos",
+      "federation": "USSF",
+      "coach": "Gregg Berhalter"
+    },
+    {
+      "name": "País de Gales",
+      "federation": "FAW",
+      "coach": "Rob Page"
+    },
+    {
+      "name": "Argentina",
+      "federation": "AFA",
+      "coach": "Lionel Scaloni"
+    },
+    {
+      "name": "Arábia Saudita",
+      "federation": "SAFF",
+      "coach": "Hervé Renard"
+    },
+    {
+      "name": "México",
+      "federation": "FMF",
+      "coach": "Gerardo Martino"
+    },
+    {
+      "name": "Polônia",
+      "federation": "PZPN",
+      "coach": "Czesław Michniewicz"
+    },
+    {
+      "name": "França",
+      "federation": "FFF",
+      "coach": "Didier Deschamps"
+    },
+    {
+      "name": "Austrália",
+      "federation": "Football Australia",
+      "coach": "Graham Arnold"
+    },
+    {
+      "name": "Dinamarca",
+      "federation": "DBU",
+      "coach": "Kasper Hjulmand"
+    },
+    {
+      "name": "Tunísia",
+      "federation": "FTF",
+      "coach": "Jalel Kadri"
+    },
+    {
+      "name": "Espanha",
+      "federation": "RFEF",
+      "coach": "Luis Enrique"
+    },
+    {
+      "name": "Costa Rica",
+      "federation": "FEDEFUTBOL",
+      "coach": "Luis Fernando Suárez"
+    },
+    {
+      "name": "Alemanha",
+      "federation": "DFB",
+      "coach": "Hansi Flick"
+    },
+    {
+      "name": "Japão",
+      "federation": "JFA",
+      "coach": "Hajime Moriyasu"
+    },
+    {
+      "name": "Bélgica",
+      "federation": "RBFA",
+      "coach": "Roberto Martínez"
+    },
+    {
+      "name": "Canadá",
+      "federation": "Canada Soccer",
+      "coach": "John Herdman"
+    },
+    {
+      "name": "Marrocos",
+      "federation": "FRMF",
+      "coach": "Walid Regragui"
+    },
+    {
+      "name": "Croácia",
+      "federation": "HNS",
+      "coach": "Zlatko Dalić"
+    },
+    {
+      "name": "Brasil",
+      "federation": "CBF",
+      "coach": "Tite"
+    },
+    {
+      "name": "Sérvia",
+      "federation": "FSS",
+      "coach": "Dragan Stojković"
+    },
+    {
+      "name": "Suíça",
+      "federation": "ASF-SFV",
+      "coach": "Murat Yakin"
+    },
+    {
+      "name": "Camarões",
+      "federation": "FECAFOOT",
+      "coach": "Rigobert Song"
+    },
+    {
+      "name": "Portugal",
+      "federation": "FPF",
+      "coach": "Fernando Santos"
+    },
+    {
+      "name": "Gana",
+      "federation": "GFA",
+      "coach": "Otto Addo"
+    },
+    {
+      "name": "Uruguai",
+      "federation": "AUF",
+      "coach": "Diego Alonso"
+    },
+    {
+      "name": "Coreia do Sul",
+      "federation": "KFA",
+      "coach": "Paulo Bento"
+    }
+  ],
+  "stadiums": [
+    {
+      "name": "Lusail Iconic Stadium",
+      "city": "Lusail",
+      "capacity": 88966
+    },
+    {
+      "name": "Al Bayt Stadium",
+      "city": "Al Khor",
+      "capacity": 68895
+    },
+    {
+      "name": "Khalifa International Stadium",
+      "city": "Al Rayyan",
+      "capacity": 45857
+    },
+    {
+      "name": "Education City Stadium",
+      "city": "Al Rayyan",
+      "capacity": 44667
+    },
+    {
+      "name": "Ahmad bin Ali Stadium",
+      "city": "Al Rayyan",
+      "capacity": 45032
+    },
+    {
+      "name": "Al Janoub Stadium",
+      "city": "Al Wakrah",
+      "capacity": 44325
+    },
+    {
+      "name": "Al Thumama Stadium",
+      "city": "Doha",
+      "capacity": 44400
+    },
+    {
+      "name": "Stadium 974",
+      "city": "Doha",
+      "capacity": 44089
+    }
+  ],
+  "matches": [
+    {
+      "stage": "GROUP",
+      "group": "Grupo A",
+      "kickoff": "2022-11-20T19:00:00+03:00",
+      "home": "Catar",
+      "away": "Equador",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 0,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Enner Valencia",
+          "team": "Equador",
+          "minute": 16,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Enner Valencia",
+          "team": "Equador",
+          "minute": 31,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo A",
+      "kickoff": "2022-11-21T19:00:00+03:00",
+      "home": "Senegal",
+      "away": "Holanda",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 0,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Cody Gakpo",
+          "team": "Holanda",
+          "minute": 84,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Davy Klaassen",
+          "team": "Holanda",
+          "minute": 90,
+          "stoppage_minute": 9,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo A",
+      "kickoff": "2022-11-25T16:00:00+03:00",
+      "home": "Catar",
+      "away": "Senegal",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 1,
+      "away_score": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Mohammed Muntari",
+          "team": "Catar",
+          "minute": 78,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Boulaye Dia",
+          "team": "Senegal",
+          "minute": 41,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Famara Diédhiou",
+          "team": "Senegal",
+          "minute": 48,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Bamba Dieng",
+          "team": "Senegal",
+          "minute": 84,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo A",
+      "kickoff": "2022-11-25T19:00:00+03:00",
+      "home": "Holanda",
+      "away": "Equador",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 1,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Cody Gakpo",
+          "team": "Holanda",
+          "minute": 6,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Enner Valencia",
+          "team": "Equador",
+          "minute": 49,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo A",
+      "kickoff": "2022-11-29T18:00:00+03:00",
+      "home": "Equador",
+      "away": "Senegal",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 1,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Moisés Caicedo",
+          "team": "Equador",
+          "minute": 67,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ismaila Sarr",
+          "team": "Senegal",
+          "minute": 44,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Koulibaly",
+          "team": "Senegal",
+          "minute": 70,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo A",
+      "kickoff": "2022-11-29T18:00:00+03:00",
+      "home": "Holanda",
+      "away": "Catar",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 2,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Cody Gakpo",
+          "team": "Holanda",
+          "minute": 26,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Frenkie de Jong",
+          "team": "Holanda",
+          "minute": 49,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo B",
+      "kickoff": "2022-11-21T16:00:00+03:00",
+      "home": "Inglaterra",
+      "away": "Irã",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 6,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Jude Bellingham",
+          "team": "Inglaterra",
+          "minute": 35,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Bukayo Saka",
+          "team": "Inglaterra",
+          "minute": 43,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Raheem Sterling",
+          "team": "Inglaterra",
+          "minute": 45,
+          "stoppage_minute": 1,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Bukayo Saka",
+          "team": "Inglaterra",
+          "minute": 62,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Marcus Rashford",
+          "team": "Inglaterra",
+          "minute": 71,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Jack Grealish",
+          "team": "Inglaterra",
+          "minute": 90,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Mehdi Taremi",
+          "team": "Irã",
+          "minute": 65,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Mehdi Taremi",
+          "team": "Irã",
+          "minute": 90,
+          "stoppage_minute": 13,
+          "is_penalty": true,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo B",
+      "kickoff": "2022-11-21T22:00:00+03:00",
+      "home": "Estados Unidos",
+      "away": "País de Gales",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 1,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Timothy Weah",
+          "team": "Estados Unidos",
+          "minute": 36,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Gareth Bale",
+          "team": "País de Gales",
+          "minute": 82,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo B",
+      "kickoff": "2022-11-25T13:00:00+03:00",
+      "home": "País de Gales",
+      "away": "Irã",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 0,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Roozbeh Cheshmi",
+          "team": "Irã",
+          "minute": 90,
+          "stoppage_minute": 8,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ramin Rezaeian",
+          "team": "Irã",
+          "minute": 90,
+          "stoppage_minute": 11,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo B",
+      "kickoff": "2022-11-25T22:00:00+03:00",
+      "home": "Inglaterra",
+      "away": "Estados Unidos",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": []
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo B",
+      "kickoff": "2022-11-29T22:00:00+03:00",
+      "home": "País de Gales",
+      "away": "Inglaterra",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 0,
+      "away_score": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Marcus Rashford",
+          "team": "Inglaterra",
+          "minute": 50,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Foden",
+          "team": "Inglaterra",
+          "minute": 51,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Marcus Rashford",
+          "team": "Inglaterra",
+          "minute": 68,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo B",
+      "kickoff": "2022-11-29T22:00:00+03:00",
+      "home": "Irã",
+      "away": "Estados Unidos",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 0,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Pulisic",
+          "team": "Estados Unidos",
+          "minute": 38,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo C",
+      "kickoff": "2022-11-22T13:00:00+03:00",
+      "home": "Argentina",
+      "away": "Arábia Saudita",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 1,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 10,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Saleh Al Shehri",
+          "team": "Arábia Saudita",
+          "minute": 48,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Salem Al Dawsari",
+          "team": "Arábia Saudita",
+          "minute": 53,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo C",
+      "kickoff": "2022-11-22T19:00:00+03:00",
+      "home": "México",
+      "away": "Polônia",
+      "stadium": "Stadium 974",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": []
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo C",
+      "kickoff": "2022-11-26T16:00:00+03:00",
+      "home": "Polônia",
+      "away": "Arábia Saudita",
+      "stadium": "Education City Stadium",
+      "home_score": 2,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Piotr Zielinski",
+          "team": "Polônia",
+          "minute": 39,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Robert Lewandowski",
+          "team": "Polônia",
+          "minute": 82,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo C",
+      "kickoff": "2022-11-26T22:00:00+03:00",
+      "home": "Argentina",
+      "away": "México",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 2,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 64,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Enzo Fernández",
+          "team": "Argentina",
+          "minute": 87,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo C",
+      "kickoff": "2022-11-30T22:00:00+03:00",
+      "home": "Polônia",
+      "away": "Argentina",
+      "stadium": "Stadium 974",
+      "home_score": 0,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Mac Allister",
+          "team": "Argentina",
+          "minute": 46,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Julián Álvarez",
+          "team": "Argentina",
+          "minute": 67,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo C",
+      "kickoff": "2022-11-30T22:00:00+03:00",
+      "home": "Arábia Saudita",
+      "away": "México",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 1,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Salem Al Dawasari",
+          "team": "Arábia Saudita",
+          "minute": 90,
+          "stoppage_minute": 5,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Henry Martín",
+          "team": "México",
+          "minute": 47,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Luis Chávez",
+          "team": "México",
+          "minute": 52,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo D",
+      "kickoff": "2022-11-22T16:00:00+03:00",
+      "home": "Dinamarca",
+      "away": "Tunísia",
+      "stadium": "Education City Stadium",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": []
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo D",
+      "kickoff": "2022-11-22T22:00:00+03:00",
+      "home": "França",
+      "away": "Austrália",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 4,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Adrien Rabiot",
+          "team": "França",
+          "minute": 27,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Olivier Giroud",
+          "team": "França",
+          "minute": 32,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 68,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Olivier Giroud",
+          "team": "França",
+          "minute": 71,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Craig Goodwin",
+          "team": "Austrália",
+          "minute": 9,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo D",
+      "kickoff": "2022-11-26T13:00:00+03:00",
+      "home": "Tunísia",
+      "away": "Austrália",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 0,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Mitchell Duke",
+          "team": "Austrália",
+          "minute": 23,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo D",
+      "kickoff": "2022-11-26T19:00:00+03:00",
+      "home": "França",
+      "away": "Dinamarca",
+      "stadium": "Stadium 974",
+      "home_score": 2,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 61,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 86,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Andreas Christensen",
+          "team": "Dinamarca",
+          "minute": 68,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo D",
+      "kickoff": "2022-11-30T18:00:00+03:00",
+      "home": "Austrália",
+      "away": "Dinamarca",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Mathew Leckie",
+          "team": "Austrália",
+          "minute": 60,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo D",
+      "kickoff": "2022-11-30T18:00:00+03:00",
+      "home": "Tunísia",
+      "away": "França",
+      "stadium": "Education City Stadium",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Wahbi Khazri",
+          "team": "Tunísia",
+          "minute": 58,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo E",
+      "kickoff": "2022-11-23T16:00:00+03:00",
+      "home": "Alemanha",
+      "away": "Japão",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 1,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Ilkay Gündogan",
+          "team": "Alemanha",
+          "minute": 33,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ritsu Doan",
+          "team": "Japão",
+          "minute": 75,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Takuma Asano",
+          "team": "Japão",
+          "minute": 83,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo E",
+      "kickoff": "2022-11-23T19:00:00+03:00",
+      "home": "Espanha",
+      "away": "Costa Rica",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 7,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Dani Olmo",
+          "team": "Espanha",
+          "minute": 11,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Marco Asensio",
+          "team": "Espanha",
+          "minute": 21,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ferran Torres",
+          "team": "Espanha",
+          "minute": 31,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ferran Torres",
+          "team": "Espanha",
+          "minute": 54,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Gavi",
+          "team": "Espanha",
+          "minute": 74,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Carlos Soler",
+          "team": "Espanha",
+          "minute": 90,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Álvaro Morata",
+          "team": "Espanha",
+          "minute": 90,
+          "stoppage_minute": 2,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo E",
+      "kickoff": "2022-11-27T13:00:00+03:00",
+      "home": "Japão",
+      "away": "Costa Rica",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 0,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Keysher Fuller",
+          "team": "Costa Rica",
+          "minute": 81,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo E",
+      "kickoff": "2022-11-27T22:00:00+03:00",
+      "home": "Espanha",
+      "away": "Alemanha",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 1,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Álvaro Morata",
+          "team": "Espanha",
+          "minute": 62,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Niclas Füllkrug",
+          "team": "Alemanha",
+          "minute": 83,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo E",
+      "kickoff": "2022-12-01T22:00:00+03:00",
+      "home": "Japão",
+      "away": "Espanha",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 2,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Ritsu Dōan",
+          "team": "Japão",
+          "minute": 48,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ao Tanaka",
+          "team": "Japão",
+          "minute": 51,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Álvaro Morata",
+          "team": "Espanha",
+          "minute": 11,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo E",
+      "kickoff": "2022-12-01T22:00:00+03:00",
+      "home": "Costa Rica",
+      "away": "Alemanha",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 2,
+      "away_score": 4,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Yeltsin Tejeda",
+          "team": "Costa Rica",
+          "minute": 58,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Juan Vargas",
+          "team": "Costa Rica",
+          "minute": 70,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Serge Gnabry",
+          "team": "Alemanha",
+          "minute": 10,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kai Lukas Havertz",
+          "team": "Alemanha",
+          "minute": 73,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kai Lukas Havertz",
+          "team": "Alemanha",
+          "minute": 85,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Niclas Füllkrug",
+          "team": "Alemanha",
+          "minute": 89,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo F",
+      "kickoff": "2022-11-23T13:00:00+03:00",
+      "home": "Marrocos",
+      "away": "Croácia",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": []
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo F",
+      "kickoff": "2022-11-23T22:00:00+03:00",
+      "home": "Bélgica",
+      "away": "Canadá",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Michy Batshuayi",
+          "team": "Bélgica",
+          "minute": 44,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo F",
+      "kickoff": "2022-11-27T16:00:00+03:00",
+      "home": "Bélgica",
+      "away": "Marrocos",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 0,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Romain Saïss",
+          "team": "Marrocos",
+          "minute": 73,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Zakaria Aboukhlal",
+          "team": "Marrocos",
+          "minute": 90,
+          "stoppage_minute": 2,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo F",
+      "kickoff": "2022-11-27T19:00:00+03:00",
+      "home": "Croácia",
+      "away": "Canadá",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 4,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Andrej Kramarić",
+          "team": "Croácia",
+          "minute": 36,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Marko Livaja",
+          "team": "Croácia",
+          "minute": 44,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Andrej Kramarić",
+          "team": "Croácia",
+          "minute": 70,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Lovro Majer",
+          "team": "Croácia",
+          "minute": 90,
+          "stoppage_minute": 4,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Alphonso Davies",
+          "team": "Canadá",
+          "minute": 2,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo F",
+      "kickoff": "2022-12-01T18:00:00+03:00",
+      "home": "Croácia",
+      "away": "Bélgica",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": []
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo F",
+      "kickoff": "2022-12-01T18:00:00+03:00",
+      "home": "Canadá",
+      "away": "Marrocos",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 1,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Nayef Aguerd",
+          "team": "Marrocos",
+          "minute": 40,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": true
+        },
+        {
+          "player": "Hakim Zyiech",
+          "team": "Marrocos",
+          "minute": 4,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Youssef En-Nesyri",
+          "team": "Marrocos",
+          "minute": 23,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo G",
+      "kickoff": "2022-11-24T13:00:00+03:00",
+      "home": "Suíça",
+      "away": "Camarões",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Breel Embolo",
+          "team": "Suíça",
+          "minute": 48,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo G",
+      "kickoff": "2022-11-24T22:00:00+03:00",
+      "home": "Brasil",
+      "away": "Sérvia",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 2,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Richarlison",
+          "team": "Brasil",
+          "minute": 62,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Richarlison",
+          "team": "Brasil",
+          "minute": 73,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo G",
+      "kickoff": "2022-11-28T13:00:00+03:00",
+      "home": "Camarões",
+      "away": "Sérvia",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 3,
+      "away_score": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Jean-Charles Castelletto",
+          "team": "Camarões",
+          "minute": 29,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Vincent Aboubakar",
+          "team": "Camarões",
+          "minute": 63,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Jean-Eric Choupo-Moting",
+          "team": "Camarões",
+          "minute": 66,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Strahinja Pavlović",
+          "team": "Sérvia",
+          "minute": 45,
+          "stoppage_minute": 1,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Sergej Milinković-Savić",
+          "team": "Sérvia",
+          "minute": 45,
+          "stoppage_minute": 3,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Aleksandar Mitrović",
+          "team": "Sérvia",
+          "minute": 53,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo G",
+      "kickoff": "2022-11-28T19:00:00+03:00",
+      "home": "Brasil",
+      "away": "Suíça",
+      "stadium": "Stadium 974",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Casemiro",
+          "team": "Brasil",
+          "minute": 83,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo G",
+      "kickoff": "2022-12-02T22:00:00+03:00",
+      "home": "Sérvia",
+      "away": "Suíça",
+      "stadium": "Stadium 974",
+      "home_score": 2,
+      "away_score": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Aleksandar Mitrović",
+          "team": "Sérvia",
+          "minute": 26,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Dušan Vlahović",
+          "team": "Sérvia",
+          "minute": 35,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Xherdan Shaqiri",
+          "team": "Suíça",
+          "minute": 20,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Breel Embolo",
+          "team": "Suíça",
+          "minute": 44,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Freuler",
+          "team": "Suíça",
+          "minute": 48,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo G",
+      "kickoff": "2022-12-02T22:00:00+03:00",
+      "home": "Camarões",
+      "away": "Brasil",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Vincent Aboubakar",
+          "team": "Camarões",
+          "minute": 90,
+          "stoppage_minute": 2,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo H",
+      "kickoff": "2022-11-24T16:00:00+03:00",
+      "home": "Uruguai",
+      "away": "Coreia do Sul",
+      "stadium": "Education City Stadium",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": []
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo H",
+      "kickoff": "2022-11-24T19:00:00+03:00",
+      "home": "Portugal",
+      "away": "Gana",
+      "stadium": "Stadium 974",
+      "home_score": 3,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Cristiano Ronaldo",
+          "team": "Portugal",
+          "minute": 65,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "João Félix",
+          "team": "Portugal",
+          "minute": 78,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Rafael Leão",
+          "team": "Portugal",
+          "minute": 80,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "André Ayew",
+          "team": "Gana",
+          "minute": 73,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Osman Bukari",
+          "team": "Gana",
+          "minute": 89,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo H",
+      "kickoff": "2022-11-28T16:00:00+03:00",
+      "home": "Coreia do Sul",
+      "away": "Gana",
+      "stadium": "Education City Stadium",
+      "home_score": 2,
+      "away_score": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Cho Gue-sung",
+          "team": "Coreia do Sul",
+          "minute": 58,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Cho Gue-sung",
+          "team": "Coreia do Sul",
+          "minute": 61,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Mohammed Salisu",
+          "team": "Gana",
+          "minute": 24,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Mohammed Kudus",
+          "team": "Gana",
+          "minute": 34,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Mohammed Kudus",
+          "team": "Gana",
+          "minute": 68,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo H",
+      "kickoff": "2022-11-28T22:00:00+03:00",
+      "home": "Portugal",
+      "away": "Uruguai",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 2,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Bruno Fernandes",
+          "team": "Portugal",
+          "minute": 54,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Bruno Fernandes",
+          "team": "Portugal",
+          "minute": 90,
+          "stoppage_minute": 3,
+          "is_penalty": true,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo H",
+      "kickoff": "2022-12-02T18:00:00+03:00",
+      "home": "Gana",
+      "away": "Uruguai",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 0,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Giorgian De Arrascaeta",
+          "team": "Uruguai",
+          "minute": 26,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Giorgian De Arrascaeta",
+          "team": "Uruguai",
+          "minute": 32,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "GROUP",
+      "group": "Grupo H",
+      "kickoff": "2022-12-02T18:00:00+03:00",
+      "home": "Coreia do Sul",
+      "away": "Portugal",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 2,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Kim Young-gwon",
+          "team": "Coreia do Sul",
+          "minute": 27,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Hwang Hee-chan",
+          "team": "Coreia do Sul",
+          "minute": 90,
+          "stoppage_minute": 1,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ricardo Horta",
+          "team": "Portugal",
+          "minute": 5,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-03T18:00:00+03:00",
+      "home": "Holanda",
+      "away": "Estados Unidos",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 3,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Memphis Depay",
+          "team": "Holanda",
+          "minute": 10,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Daley Blind",
+          "team": "Holanda",
+          "minute": 45,
+          "stoppage_minute": 1,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Denzel Dumfries",
+          "team": "Holanda",
+          "minute": 81,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Haji Wright",
+          "team": "Estados Unidos",
+          "minute": 76,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-03T22:00:00+03:00",
+      "home": "Argentina",
+      "away": "Austrália",
+      "stadium": "Ahmad bin Ali Stadium",
+      "home_score": 2,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 35,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Julián Álvarez",
+          "team": "Argentina",
+          "minute": 57,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Enzo Fernández",
+          "team": "Argentina",
+          "minute": 77,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": true
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-04T18:00:00+03:00",
+      "home": "França",
+      "away": "Polônia",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 3,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Olivier Giroud",
+          "team": "França",
+          "minute": 44,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 74,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 90,
+          "stoppage_minute": 1,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Robert Lewandowski",
+          "team": "Polônia",
+          "minute": 90,
+          "stoppage_minute": 9,
+          "is_penalty": true,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-04T22:00:00+03:00",
+      "home": "Inglaterra",
+      "away": "Senegal",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 3,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Jordan Henderson",
+          "team": "Inglaterra",
+          "minute": 38,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Harry Kane",
+          "team": "Inglaterra",
+          "minute": 45,
+          "stoppage_minute": 3,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Bukayo Saka",
+          "team": "Inglaterra",
+          "minute": 57,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-05T18:00:00+03:00",
+      "home": "Japão",
+      "away": "Croácia",
+      "stadium": "Al Janoub Stadium",
+      "home_score": 1,
+      "away_score": 1,
+      "home_penalties": 1,
+      "away_penalties": 3,
+      "goals": [
+        {
+          "player": "Daizen Maeda",
+          "team": "Japão",
+          "minute": 43,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ivan Perišić",
+          "team": "Croácia",
+          "minute": 55,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-05T22:00:00+03:00",
+      "home": "Brasil",
+      "away": "Coreia do Sul",
+      "stadium": "Stadium 974",
+      "home_score": 4,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Vinícius Jr.",
+          "team": "Brasil",
+          "minute": 7,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Neymar",
+          "team": "Brasil",
+          "minute": 13,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Richarlison",
+          "team": "Brasil",
+          "minute": 29,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Lucas Paquetá",
+          "team": "Brasil",
+          "minute": 36,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Paik Seung-ho",
+          "team": "Coreia do Sul",
+          "minute": 76,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-06T18:00:00+03:00",
+      "home": "Marrocos",
+      "away": "Espanha",
+      "stadium": "Education City Stadium",
+      "home_score": 0,
+      "away_score": 0,
+      "home_penalties": 3,
+      "away_penalties": 0,
+      "goals": []
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "group": null,
+      "kickoff": "2022-12-06T22:00:00+03:00",
+      "home": "Portugal",
+      "away": "Suíça",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 6,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Gonçalo Ramos",
+          "team": "Portugal",
+          "minute": 17,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Pepe",
+          "team": "Portugal",
+          "minute": 33,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Gonçalo Ramos",
+          "team": "Portugal",
+          "minute": 51,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Raphaël Guerreiro",
+          "team": "Portugal",
+          "minute": 55,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Gonçalo Ramos",
+          "team": "Portugal",
+          "minute": 67,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Rafael Leão",
+          "team": "Portugal",
+          "minute": 90,
+          "stoppage_minute": 2,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Manuel Akanji",
+          "team": "Suíça",
+          "minute": 58,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "QUARTER_FINAL",
+      "group": null,
+      "kickoff": "2022-12-09T18:00:00+03:00",
+      "home": "Croácia",
+      "away": "Brasil",
+      "stadium": "Education City Stadium",
+      "home_score": 1,
+      "away_score": 1,
+      "home_penalties": 4,
+      "away_penalties": 2,
+      "goals": [
+        {
+          "player": "Bruno Petković",
+          "team": "Croácia",
+          "minute": 117,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Neymar",
+          "team": "Brasil",
+          "minute": 105,
+          "stoppage_minute": 1,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "QUARTER_FINAL",
+      "group": null,
+      "kickoff": "2022-12-09T22:00:00+03:00",
+      "home": "Holanda",
+      "away": "Argentina",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 2,
+      "away_score": 2,
+      "home_penalties": 3,
+      "away_penalties": 4,
+      "goals": [
+        {
+          "player": "Wout Werghost",
+          "team": "Holanda",
+          "minute": 83,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Wout Werghost",
+          "team": "Holanda",
+          "minute": 90,
+          "stoppage_minute": 11,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Nahuel Molina",
+          "team": "Argentina",
+          "minute": 35,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 73,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "QUARTER_FINAL",
+      "group": null,
+      "kickoff": "2022-12-10T18:00:00+03:00",
+      "home": "Marrocos",
+      "away": "Portugal",
+      "stadium": "Al Thumama Stadium",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Youssef En-Nesyri",
+          "team": "Marrocos",
+          "minute": 42,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "QUARTER_FINAL",
+      "group": null,
+      "kickoff": "2022-12-10T22:00:00+03:00",
+      "home": "Inglaterra",
+      "away": "França",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 1,
+      "away_score": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Harry Kane",
+          "team": "Inglaterra",
+          "minute": 54,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Aurelién Tchouaméni",
+          "team": "França",
+          "minute": 17,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Olivier Giroud",
+          "team": "França",
+          "minute": 78,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "SEMI_FINAL",
+      "group": null,
+      "kickoff": "2022-12-13T22:00:00+03:00",
+      "home": "Argentina",
+      "away": "Croácia",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 3,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 34,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Julián Álvarez",
+          "team": "Argentina",
+          "minute": 39,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Julián Álvarez",
+          "team": "Argentina",
+          "minute": 69,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "SEMI_FINAL",
+      "group": null,
+      "kickoff": "2022-12-14T22:00:00+03:00",
+      "home": "França",
+      "away": "Marrocos",
+      "stadium": "Al Bayt Stadium",
+      "home_score": 2,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Théo Hernandez",
+          "team": "França",
+          "minute": 5,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kolo Muani",
+          "team": "França",
+          "minute": 79,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "THIRD_PLACE",
+      "group": null,
+      "kickoff": "2022-12-17T18:00:00+03:00",
+      "home": "Croácia",
+      "away": "Marrocos",
+      "stadium": "Khalifa International Stadium",
+      "home_score": 2,
+      "away_score": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "goals": [
+        {
+          "player": "Joško Gvardiol",
+          "team": "Croácia",
+          "minute": 7,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Mislav Oršić",
+          "team": "Croácia",
+          "minute": 42,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Achraf Dari",
+          "team": "Marrocos",
+          "minute": 9,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        }
+      ]
+    },
+    {
+      "stage": "FINAL",
+      "group": null,
+      "kickoff": "2022-12-18T18:00:00+03:00",
+      "home": "Argentina",
+      "away": "França",
+      "stadium": "Lusail Iconic Stadium",
+      "home_score": 3,
+      "away_score": 3,
+      "home_penalties": 4,
+      "away_penalties": 2,
+      "goals": [
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 23,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Ángel Di María",
+          "team": "Argentina",
+          "minute": 36,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Lionel Messi",
+          "team": "Argentina",
+          "minute": 108,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 80,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 81,
+          "stoppage_minute": null,
+          "is_penalty": false,
+          "is_own_goal": false
+        },
+        {
+          "player": "Kylian Mbappé",
+          "team": "França",
+          "minute": 118,
+          "stoppage_minute": null,
+          "is_penalty": true,
+          "is_own_goal": false
+        }
+      ]
+    }
+  ]
+}

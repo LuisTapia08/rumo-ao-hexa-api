@@ -2,11 +2,14 @@ from datetime import date, datetime, timezone
 
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.core.management import call_command
+from django.core.management.base import CommandError
 from django.db import IntegrityError
+from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from core import models
+from core import models, services
 
 
 class BaseAPITestCase(APITestCase):
@@ -475,3 +478,64 @@ class TopScorersTests(BaseAPITestCase):
 
         response = self.client.get("/api/player/artilheiros/", {"team": "brasil"})
         self.assertEqual(response.data["count"], 7)
+
+
+class SeedWorldCup2022Tests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        call_command("seed_worldcup2022", verbosity=0)
+
+    def counts(self):
+        return (
+            models.Match.objects.count(),
+            models.Goal.objects.count(),
+            models.Team.objects.count(),
+            models.TeamGroup.objects.count(),
+            models.Stadium.objects.count(),
+            models.Coach.objects.count(),
+        )
+
+    def test_counts(self):
+        self.assertEqual(self.counts(), (64, 172, 32, 8, 8, 32))
+
+    def test_goals_match_scores(self):
+        for match in models.Match.objects.prefetch_related("goals"):
+            home = sum(1 for g in match.goals.all() if g.scoring_team == match.home_team)
+            away = sum(1 for g in match.goals.all() if g.scoring_team == match.away_team)
+            self.assertEqual(
+                (home, away),
+                (match.home_score, match.away_score),
+                f"{match.home_team} x {match.away_team}",
+            )
+
+    def test_top_scorer_is_mbappe_with_8(self):
+        top = services.top_scorers(models.Goal.objects.all()).first()
+        self.assertEqual(top.name, "Kylian Mbappé")
+        self.assertEqual(top.goals_count, 8)
+
+    def test_final_argentina_wins_on_penalties(self):
+        final = models.Match.objects.get(stage=models.Match.Stage.FINAL)
+        self.assertEqual((final.home_score, final.away_score), (3, 3))
+        self.assertEqual((final.home_penalties, final.away_penalties), (4, 2))
+        self.assertEqual(final.winner.name, "Argentina")
+
+    def test_brasil_first_in_group_g(self):
+        group = models.TeamGroup.objects.get(name="Grupo G")
+        first = services.group_standings(group)[0]
+        self.assertEqual(first["team"], "Brasil")
+        self.assertEqual(first["points"], 6)
+
+    def test_idempotent(self):
+        before = self.counts()
+        call_command("seed_worldcup2022", verbosity=0)
+        self.assertEqual(self.counts(), before)
+
+
+class SeedWorldCup2022ConflictTests(TestCase):
+    def test_conflicting_local_data_raises_and_rolls_back(self):
+        models.Team.objects.create(name="Seleção X", federation="CBF")
+        with self.assertRaises(CommandError) as ctx:
+            call_command("seed_worldcup2022", verbosity=0)
+        self.assertIn("--reset", str(ctx.exception))
+        self.assertEqual(models.Match.objects.count(), 0)
+        self.assertEqual(models.Team.objects.count(), 1)
