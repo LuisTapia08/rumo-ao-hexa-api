@@ -1,0 +1,9 @@
+.venv
+.git
+.github
+.superpowers
+db.sqlite3
+__pycache__
+*.pyc
+staticfiles
+docs
