@@ -578,3 +578,16 @@ class SeedWorldCup2022ConflictTests(TestCase):
         self.assertEqual(models.Team.objects.count(), 0)
         self.assertEqual(models.TeamGroup.objects.count(), 0)
         self.assertEqual(models.Match.objects.count(), 0)
+
+
+class DocsTests(TestCase):
+    def test_root_redirects_to_docs(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response["Location"], "/api/docs/")
+
+    def test_swagger_ui_is_public(self):
+        self.assertEqual(self.client.get("/api/docs/").status_code, 200)
+
+    def test_schema_is_public(self):
+        self.assertEqual(self.client.get("/api/schema/").status_code, 200)

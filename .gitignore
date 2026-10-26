@@ -7,3 +7,5 @@ setup/__pycache__/
 
 .venv
 *.db
+
+staticfiles/

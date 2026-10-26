@@ -1,4 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
@@ -18,6 +19,7 @@ class TeamGroupViewSet(BaseViewSet):
     filterset_class = filters.TeamGroupFilter
     serializer_class = serializers.TeamGroupSerializer
 
+    @extend_schema(responses=serializers.StandingSerializer(many=True))
     @action(detail=True, methods=["get"], url_path="classificacao")
     def classificacao(self, request, pk=None):
         group = self.get_object()
@@ -44,6 +46,14 @@ class PlayerViewSet(BaseViewSet):
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "team", str, description="Filtra pelo nome da seleção (sem distinguir caixa)"
+            )
+        ],
+        responses=serializers.TopScorerSerializer(many=True),
+    )
     @action(detail=False, methods=["get"], url_path="artilheiros")
     def artilheiros(self, request):
         scorers = services.top_scorers(models.Goal.objects.all())

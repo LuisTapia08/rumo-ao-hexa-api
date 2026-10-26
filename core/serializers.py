@@ -1,4 +1,6 @@
 from django.core.exceptions import ValidationError as DjangoValidationError
+from drf_spectacular.types import OpenApiTypes
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
 from core import models
@@ -125,6 +127,7 @@ class MatchSerializer(ModelSerializer):
         model = models.Match
         fields = "__all__"
 
+    @extend_schema_field(OpenApiTypes.STR)
     def get_winner(self, obj):
         winner = obj.winner
         return winner.name if winner else None
@@ -153,3 +156,17 @@ class TopScorerSerializer(serializers.Serializer):
     team = serializers.CharField(source="team.name")
     goals = serializers.IntegerField(source="goals_count")
     penalties = serializers.IntegerField(source="penalties_count")
+
+
+class StandingSerializer(serializers.Serializer):
+    # só descreve a resposta de /team-group/{id}/classificacao/ no schema
+    team = serializers.CharField()
+    team_id = serializers.IntegerField()
+    points = serializers.IntegerField()
+    played = serializers.IntegerField()
+    won = serializers.IntegerField()
+    drawn = serializers.IntegerField()
+    lost = serializers.IntegerField()
+    goals_for = serializers.IntegerField()
+    goals_against = serializers.IntegerField()
+    goal_difference = serializers.IntegerField()
