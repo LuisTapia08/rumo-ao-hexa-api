@@ -49,6 +49,8 @@ class Command(BaseCommand):
                 "locais, rode com --reset."
             ) from exc
 
+        if options["verbosity"] < 1:
+            return
         self.stdout.write(
             self.style.SUCCESS(
                 "Copa 2022 carregada: "

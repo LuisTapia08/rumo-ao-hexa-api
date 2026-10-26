@@ -157,7 +157,7 @@ class Match(ModelBase):
         ]
 
     def __str__(self):
-        return f"{self.home_team_id} x {self.away_team_id} ({self.stage})"
+        return f"{self.home_team} x {self.away_team} ({self.get_stage_display()})"
 
     @property
     def is_knockout(self):

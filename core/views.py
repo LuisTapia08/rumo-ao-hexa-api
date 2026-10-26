@@ -1,6 +1,8 @@
+from django.db.models import Prefetch, ProtectedError, RestrictedError
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import OpenApiParameter, extend_schema
-from rest_framework import viewsets
+from rest_framework import status, viewsets
+from rest_framework.exceptions import APIException
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
@@ -8,10 +10,25 @@ from rest_framework.response import Response
 from core import filters, models, serializers, services
 
 
+class ConflictError(APIException):
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = "Não é possível apagar: existem registros que dependem deste."
+    default_code = "conflict"
+
+
 class BaseViewSet(viewsets.ModelViewSet):
     # Leitura pública; criar/editar/apagar exige token JWT
     permission_classes = [IsAuthenticatedOrReadOnly]
     filter_backends = [DjangoFilterBackend]
+
+    def perform_destroy(self, instance):
+        try:
+            instance.delete()
+        except (ProtectedError, RestrictedError):
+            raise ConflictError(
+                "Não é possível apagar este registro: há outros registros "
+                "(partidas, gols, jogadores etc.) que dependem dele."
+            )
 
 
 class TeamGroupViewSet(BaseViewSet):
@@ -54,7 +71,9 @@ class PlayerViewSet(BaseViewSet):
         ],
         responses=serializers.TopScorerSerializer(many=True),
     )
-    @action(detail=False, methods=["get"], url_path="artilheiros")
+    @action(
+        detail=False, methods=["get"], url_path="artilheiros", filter_backends=[]
+    )
     def artilheiros(self, request):
         scorers = services.top_scorers(models.Goal.objects.all())
         team = request.query_params.get("team")
@@ -82,7 +101,14 @@ class MatchViewSet(BaseViewSet):
         models.Match.objects.select_related(
             "home_team", "away_team", "stadium", "team_group"
         )
-        .prefetch_related("goals__player__team")
+        .prefetch_related(
+            Prefetch(
+                "goals",
+                queryset=models.Goal.objects.select_related("player__team").order_by(
+                    "minute", "stoppage_minute", "id"
+                ),
+            )
+        )
         .order_by("kickoff", "id")
     )
     filterset_class = filters.MatchFilter

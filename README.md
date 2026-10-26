@@ -65,7 +65,7 @@ A API fica disponível em `http://127.0.0.1:8000/api/`, a documentação Swagger
 
 ```bash
 python manage.py seed_worldcup2022           # carrega (ou atualiza) os dados
-python manage.py seed_worldcup2022 --reset   # apaga os dados da Copa e recarrega do zero
+python manage.py seed_worldcup2022 --reset   # apaga TODOS os grupos, seleções, jogadores, técnicos, estádios, partidas e gols (inclusive dados locais) e recarrega a Copa
 ```
 
 O comando é **idempotente**: pode ser executado várias vezes sem duplicar registros. Rode `python manage.py migrate` antes dele. Ele carrega 8 grupos, 32 seleções com técnicos, 8 estádios, 64 partidas e 172 gols a partir de `data/worldcup2022.json`.
@@ -105,7 +105,8 @@ Ao iniciar, o contêiner aplica as migrações, roda o `seed_worldcup2022`, cria
 | `CSRF_TRUSTED_ORIGINS` | vazio | Origens confiáveis para CSRF (ex.: `https://*.onrender.com`) |
 | `CORS_ALLOWED_ORIGINS` | vazio | Origens de front-ends autorizados a consumir a API |
 | `DATABASE_URL` | SQLite local (`db.sqlite3`) | URL do banco (via `dj-database-url`) |
-| `DJANGO_SUPERUSER_USERNAME` / `DJANGO_SUPERUSER_PASSWORD` / `DJANGO_SUPERUSER_EMAIL` | vazio | Criam o superusuário na inicialização do contêiner |
+| `DJANGO_SUPERUSER_USERNAME` / `DJANGO_SUPERUSER_PASSWORD` | vazio | Criam o superusuário na inicialização do contêiner (informe os dois) |
+| `DJANGO_SUPERUSER_EMAIL` | vazio | Opcional; e-mail do superusuário |
 
 ## Deploy no Render
 

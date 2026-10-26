@@ -248,7 +248,7 @@ class MatchAPITests(AuthMixin, BaseAPITestCase):
             m = self.make_match()
             m.save()
             models.Goal.objects.create(match=m, player=self.make_player(number=20 + i), minute=5)
-        with self.assertNumQueries(5):
+        with self.assertNumQueries(3):
             self.client.get("/api/match/")
 
     def test_match_create_requires_auth(self):
@@ -306,6 +306,16 @@ class StadiumAPITests(AuthMixin, BaseAPITestCase):
         self.assertEqual(self.client.get("/api/stadium/").data["count"], 1)
         self.assertEqual(self.client.get("/api/stadium/?city=lusail").data["count"], 1)
         self.assertEqual(self.client.get("/api/stadium/?city=Doha").data["count"], 0)
+
+
+class ProtectedDeleteTests(AuthMixin, BaseAPITestCase):
+    def test_delete_stadium_with_matches_returns_409(self):
+        self.make_match().save()
+        self.authenticate()
+        response = self.client.delete(f"/api/stadium/{self.stadium.pk}/")
+        self.assertEqual(response.status_code, status.HTTP_409_CONFLICT)
+        self.assertIn("detail", response.data)
+        self.assertTrue(models.Stadium.objects.filter(pk=self.stadium.pk).exists())
 
 
 class GoalAPITests(AuthMixin, BaseAPITestCase):
@@ -537,7 +547,7 @@ class SeedWorldCup2022ConflictTests(TestCase):
         with self.assertRaises(CommandError) as ctx:
             call_command("seed_worldcup2022", verbosity=0)
         self.assertIn("--reset", str(ctx.exception))
-        self.assertIn("UNIQUE constraint failed", str(ctx.exception))
+        self.assertIsInstance(ctx.exception.__cause__, IntegrityError)
         self.assertEqual(models.Match.objects.count(), 0)
         self.assertEqual(models.Team.objects.count(), 1)
 

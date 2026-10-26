@@ -1,5 +1,4 @@
 from django.core.exceptions import ValidationError as DjangoValidationError
-from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
@@ -127,7 +126,7 @@ class MatchSerializer(ModelSerializer):
         model = models.Match
         fields = "__all__"
 
-    @extend_schema_field(OpenApiTypes.STR)
+    @extend_schema_field(serializers.CharField(allow_null=True))
     def get_winner(self, obj):
         winner = obj.winner
         return winner.name if winner else None
