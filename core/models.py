@@ -65,6 +65,13 @@ class Player(Person):
     foot_preference = models.CharField(max_length=1, choices=FootPreference.choices)
     team = models.ForeignKey("Team", on_delete=models.CASCADE, related_name="players")
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["team", "number"], name="unique_player_number_per_team"
+            )
+        ]
+
 
 class Team(ModelBase):
     name = models.CharField(max_length=255, null=False, blank=False, unique=True)
