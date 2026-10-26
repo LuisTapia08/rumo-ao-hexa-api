@@ -79,3 +79,17 @@ class PlayerTests(BaseAPITestCase):
         self.assertEqual(response.data["count"], 1)
         response = self.client.get("/api/player/", {"team": "Argentina"})
         self.assertEqual(response.data["count"], 0)
+
+
+class OptionalFieldsTests(BaseAPITestCase):
+    def test_player_with_only_name_and_team(self):
+        player = models.Player.objects.create(name="Richarlison", team=self.brasil)
+        response = self.client.get(f"/api/player/{player.id}/")
+        self.assertEqual(response.status_code, 200)
+        self.assertIsNone(response.data["position"])
+        self.assertIsNone(response.data["shirt_size"])
+        self.assertIsNone(response.data["foot_preference"])
+
+    def test_team_without_year_founded(self):
+        team = models.Team.objects.create(name="Sérvia", federation="FSS")
+        self.assertIsNone(team.year_founded)

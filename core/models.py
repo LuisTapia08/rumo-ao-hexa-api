@@ -21,10 +21,10 @@ class Person(ModelBase):
         XL = "XL", "Extra Large"
 
     name = models.CharField(max_length=255)
-    birth_date = models.DateField()
-    height = models.FloatField()
-    weight = models.FloatField()
-    foot_size = models.FloatField()
+    birth_date = models.DateField(null=True, blank=True)
+    height = models.FloatField(null=True, blank=True)
+    weight = models.FloatField(null=True, blank=True)
+    foot_size = models.FloatField(null=True, blank=True)
     shirt_size = models.CharField(
         max_length=2, choices=ShirtSize.choices, null=True, blank=True
     )
@@ -60,9 +60,13 @@ class Player(Person):
         RIGHT = "R", "Right"
         BOTH = "B", "Both"
 
-    position = models.CharField(max_length=2, choices=Position.choices)
-    number = models.IntegerField()
-    foot_preference = models.CharField(max_length=1, choices=FootPreference.choices)
+    position = models.CharField(
+        max_length=2, choices=Position.choices, blank=True, null=True
+    )
+    number = models.IntegerField(null=True, blank=True)
+    foot_preference = models.CharField(
+        max_length=1, choices=FootPreference.choices, blank=True, null=True
+    )
     team = models.ForeignKey("Team", on_delete=models.CASCADE, related_name="players")
 
     class Meta:
@@ -76,7 +80,7 @@ class Player(Person):
 class Team(ModelBase):
     name = models.CharField(max_length=255, null=False, blank=False, unique=True)
     federation = models.CharField(max_length=255, unique=True)
-    year_founded = models.IntegerField()
+    year_founded = models.IntegerField(null=True, blank=True)
     team_group = models.ForeignKey(
         TeamGroup, on_delete=models.CASCADE, related_name="teams", null=True, blank=True
     )
