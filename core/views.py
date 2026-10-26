@@ -43,3 +43,29 @@ class CoachViewSet(BaseViewSet):
     queryset = models.Coach.objects.select_related("team").order_by("id")
     filterset_class = filters.CoachFilter
     serializer_class = serializers.CoachSerializer
+
+
+class StadiumViewSet(BaseViewSet):
+    queryset = models.Stadium.objects.order_by("name", "id")
+    filterset_class = filters.StadiumFilter
+    serializer_class = serializers.StadiumSerializer
+
+
+class MatchViewSet(BaseViewSet):
+    queryset = (
+        models.Match.objects.select_related(
+            "home_team", "away_team", "stadium", "team_group"
+        )
+        .prefetch_related("goals__player__team")
+        .order_by("kickoff", "id")
+    )
+    filterset_class = filters.MatchFilter
+    serializer_class = serializers.MatchSerializer
+
+
+class GoalViewSet(BaseViewSet):
+    queryset = models.Goal.objects.select_related(
+        "player__team", "match__home_team", "match__away_team"
+    ).order_by("match__kickoff", "minute", "stoppage_minute", "id")
+    filterset_class = filters.GoalFilter
+    serializer_class = serializers.GoalSerializer

@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django_filters import rest_framework as filters
 from core import models
 
@@ -65,3 +66,34 @@ class CoachFilter(PersonFilter):
     class Meta:
         model = models.Coach
         fields = []
+
+
+class StadiumFilter(BaseFilter):
+    city = filters.CharFilter(field_name="city", lookup_expr="icontains", label="Cidade")
+
+    class Meta:
+        model = models.Stadium
+        fields = []
+
+
+class MatchFilter(filters.FilterSet):
+    team = filters.CharFilter(method="filter_team", label="Seleção (mandante ou visitante)")
+    kickoff_after = filters.DateTimeFilter(field_name="kickoff", lookup_expr="gte")
+    kickoff_before = filters.DateTimeFilter(field_name="kickoff", lookup_expr="lte")
+
+    class Meta:
+        model = models.Match
+        fields = ["stage", "status", "team_group", "stadium"]
+
+    def filter_team(self, queryset, name, value):
+        return queryset.filter(
+            Q(home_team__name__iexact=value) | Q(away_team__name__iexact=value)
+        )
+
+
+class GoalFilter(filters.FilterSet):
+    team = filters.CharFilter(field_name="player__team__name", lookup_expr="iexact")
+
+    class Meta:
+        model = models.Goal
+        fields = ["match", "player", "is_penalty", "is_own_goal"]

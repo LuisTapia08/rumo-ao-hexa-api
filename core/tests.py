@@ -201,3 +201,142 @@ class GoalModelTests(BaseAPITestCase):
         for minute in (0, 121):
             with self.assertRaises(ValidationError):
                 self.make_goal(minute=minute).full_clean()
+
+
+class AuthMixin:
+    def authenticate(self):
+        token = self.client.post(
+            "/api/token/", {"username": "tester", "password": "senha-forte-123"}
+        ).data["access"]
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
+
+
+class MatchAPITests(AuthMixin, BaseAPITestCase):
+    def payload(self, **kwargs):
+        data = {
+            "home_team": self.brasil.id,
+            "away_team": self.servia.id,
+            "stadium": self.stadium.id,
+            "kickoff": "2022-11-24T19:00:00Z",
+            "stage": "GROUP",
+            "team_group": self.group.id,
+        }
+        data.update(kwargs)
+        return data
+
+    def test_match_list_public_and_shows_names(self):
+        match = self.make_match()
+        match.save()
+        player = self.make_player()
+        models.Goal.objects.create(match=match, player=player, minute=10)
+        response = self.client.get("/api/match/")
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        item = response.data["results"][0]
+        self.assertEqual(item["home_team_name"], "Brasil")
+        self.assertEqual(item["stadium_name"], "Lusail Stadium")
+        self.assertIn("winner", item)
+        self.assertIsNone(item["winner"])
+        self.assertEqual(len(item["goals"]), 1)
+        self.assertEqual(item["goals"][0]["player_name"], "Jogador")
+        self.assertEqual(item["goals"][0]["scoring_team"], "Brasil")
+
+    def test_match_list_does_not_have_n_plus_one_queries(self):
+        for i in range(3):
+            m = self.make_match()
+            m.save()
+            models.Goal.objects.create(match=m, player=self.make_player(number=20 + i), minute=5)
+        with self.assertNumQueries(5):
+            self.client.get("/api/match/")
+
+    def test_match_create_requires_auth(self):
+        response = self.client.post("/api/match/", self.payload(), format="json")
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.authenticate()
+        response = self.client.post("/api/match/", self.payload(), format="json")
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_match_invalid_returns_400(self):
+        self.authenticate()
+        response = self.client.post(
+            "/api/match/",
+            self.payload(stage="FINAL", team_group=None, home_penalties=3),
+            format="json",
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("home_penalties", response.data)
+
+    def test_match_partial_update_validates_merged_values(self):
+        match = self.make_match()
+        match.save()
+        self.authenticate()
+        response = self.client.patch(
+            f"/api/match/{match.id}/", {"home_penalties": 3, "away_penalties": 2}, format="json"
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_match_filter_team_case_insensitive(self):
+        self.make_match().save()
+        response = self.client.get("/api/match/?team=brasil")
+        self.assertEqual(response.data["count"], 1)
+        response = self.client.get("/api/match/?team=Argentina")
+        self.assertEqual(response.data["count"], 0)
+
+    def test_match_filter_stage_and_kickoff(self):
+        self.make_match().save()
+        self.assertEqual(self.client.get("/api/match/?stage=GROUP").data["count"], 1)
+        self.assertEqual(self.client.get("/api/match/?stage=FINAL").data["count"], 0)
+        self.assertEqual(self.client.get("/api/match/?kickoff_after=2022-11-25").data["count"], 0)
+        self.assertEqual(self.client.get("/api/match/?kickoff_after=2022-11-24").data["count"], 1)
+        self.assertEqual(self.client.get("/api/match/?kickoff_before=2022-11-23").data["count"], 0)
+
+    def test_match_winner_is_team_name(self):
+        match = self.make_match(
+            status=models.Match.Status.FINISHED, home_score=2, away_score=0
+        )
+        match.save()
+        item = self.client.get("/api/match/").data["results"][0]
+        self.assertEqual(item["winner"], "Brasil")
+
+
+class StadiumAPITests(AuthMixin, BaseAPITestCase):
+    def test_stadium_list_and_filter(self):
+        self.assertEqual(self.client.get("/api/stadium/").data["count"], 1)
+        self.assertEqual(self.client.get("/api/stadium/?city=lusail").data["count"], 1)
+        self.assertEqual(self.client.get("/api/stadium/?city=Doha").data["count"], 0)
+
+
+class GoalAPITests(AuthMixin, BaseAPITestCase):
+    def setUp(self):
+        self.match = self.make_match()
+        self.match.save()
+        self.player = self.make_player()
+
+    def test_goal_create_ok(self):
+        self.authenticate()
+        response = self.client.post(
+            "/api/goal/",
+            {"match": self.match.id, "player": self.player.id, "minute": 12},
+            format="json",
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_goal_invalid_player_returns_400(self):
+        outsider_team = models.Team.objects.create(name="Gana", federation="GFA")
+        outsider = self.make_player(name="Fora", team=outsider_team, number=7)
+        self.authenticate()
+        response = self.client.post(
+            "/api/goal/",
+            {"match": self.match.id, "player": outsider.id, "minute": 12},
+            format="json",
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_goal_filter_team_and_own_goal(self):
+        models.Goal.objects.create(match=self.match, player=self.player, minute=5)
+        models.Goal.objects.create(
+            match=self.match, player=self.player, minute=50, is_own_goal=True
+        )
+        self.assertEqual(self.client.get("/api/goal/?team=brasil").data["count"], 2)
+        self.assertEqual(self.client.get("/api/goal/?team=Sérvia").data["count"], 0)
+        self.assertEqual(self.client.get("/api/goal/?is_own_goal=true").data["count"], 1)
+        self.assertEqual(self.client.get(f"/api/goal/?match={self.match.id}").data["count"], 2)

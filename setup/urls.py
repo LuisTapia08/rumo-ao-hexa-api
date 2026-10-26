@@ -13,6 +13,9 @@ router.register(r"team-group", views.TeamGroupViewSet)
 router.register(r"team", views.TeamViewSet)
 router.register(r"player", views.PlayerViewSet)
 router.register(r"coach", views.CoachViewSet)
+router.register(r"stadium", views.StadiumViewSet)
+router.register(r"match", views.MatchViewSet)
+router.register(r"goal", views.GoalViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
