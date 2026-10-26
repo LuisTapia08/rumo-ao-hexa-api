@@ -146,3 +146,10 @@ class GoalSerializer(ModelSerializer):
     def validate(self, attrs):
         attrs = super().validate(attrs)
         return _run_model_clean(models.Goal, self, attrs)
+
+
+class TopScorerSerializer(serializers.Serializer):
+    player = serializers.CharField(source="name")
+    team = serializers.CharField(source="team.name")
+    goals = serializers.IntegerField(source="goals_count")
+    penalties = serializers.IntegerField(source="penalties_count")

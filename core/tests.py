@@ -340,3 +340,138 @@ class GoalAPITests(AuthMixin, BaseAPITestCase):
         self.assertEqual(self.client.get("/api/goal/?team=Sérvia").data["count"], 0)
         self.assertEqual(self.client.get("/api/goal/?is_own_goal=true").data["count"], 1)
         self.assertEqual(self.client.get(f"/api/goal/?match={self.match.id}").data["count"], 2)
+
+
+class StandingsTests(BaseAPITestCase):
+    def setUp(self):
+        self.a = self.brasil
+        self.b = self.servia
+        self.c = models.Team.objects.create(name="Suíça", federation="SFV", team_group=self.group)
+        self.d = models.Team.objects.create(name="Camarões", federation="FECAFOOT", team_group=self.group)
+
+    def finished(self, home, away, home_score, away_score, **kwargs):
+        match = self.make_match(
+            home_team=home,
+            away_team=away,
+            home_score=home_score,
+            away_score=away_score,
+            status=models.Match.Status.FINISHED,
+            **kwargs,
+        )
+        match.save()
+        return match
+
+    def test_standings_points_and_order(self):
+        from core.services import group_standings
+
+        self.finished(self.a, self.b, 2, 0)
+        self.finished(self.a, self.c, 1, 1)
+        self.finished(self.d, self.b, 3, 0)
+
+        table = group_standings(self.group)
+
+        self.assertEqual(
+            [row["team"] for row in table], ["Brasil", "Camarões", "Suíça", "Sérvia"]
+        )
+        self.assertEqual([row["points"] for row in table], [4, 3, 1, 0])
+        self.assertEqual(table[0]["goal_difference"], 2)
+        self.assertEqual(table[0]["team_id"], self.a.id)
+        self.assertEqual(table[0]["played"], 2)
+        self.assertEqual((table[0]["won"], table[0]["drawn"], table[0]["lost"]), (1, 1, 0))
+
+    def test_standings_tiebreak_goal_difference_then_goals_for(self):
+        from core.services import group_standings
+
+        # A e D: 3 pontos; saldo igual (+1); D com mais gols pró (3 x 2)
+        self.finished(self.a, self.b, 1, 0)
+        self.finished(self.d, self.c, 3, 2)
+        # B e C: 0 pontos; saldos -1 e -1; gols pró B=0, C=2 -> C antes de B
+        table = group_standings(self.group)
+        self.assertEqual(
+            [row["team"] for row in table], ["Camarões", "Brasil", "Suíça", "Sérvia"]
+        )
+
+    def test_standings_tiebreak_goal_difference(self):
+        from core.services import group_standings
+
+        self.finished(self.a, self.b, 1, 0)
+        self.finished(self.d, self.c, 3, 0)
+        table = group_standings(self.group)
+        self.assertEqual([row["team"] for row in table][:2], ["Camarões", "Brasil"])
+
+    def test_standings_ignores_unfinished_and_knockout(self):
+        from core.services import group_standings
+
+        self.make_match(
+            home_team=self.a, away_team=self.b, home_score=5, away_score=0
+        ).save()
+        self.finished(self.a, self.b, 4, 0, stage=models.Match.Stage.ROUND_OF_16, team_group=None)
+
+        table = group_standings(self.group)
+
+        self.assertTrue(all(row["played"] == 0 for row in table))
+
+    def test_standings_empty_group_lists_teams_with_zeros(self):
+        from core.services import group_standings
+
+        table = group_standings(self.group)
+
+        self.assertEqual(len(table), 4)
+        self.assertEqual([row["team"] for row in table], ["Brasil", "Camarões", "Sérvia", "Suíça"])
+        for row in table:
+            self.assertEqual(row["points"], 0)
+            self.assertEqual(row["goals_for"], 0)
+
+    def test_classificacao_endpoint(self):
+        self.finished(self.a, self.b, 2, 0)
+
+        response = self.client.get(f"/api/team-group/{self.group.id}/classificacao/")
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 4)
+        self.assertEqual(response.data[0]["team"], "Brasil")
+
+
+class TopScorersTests(BaseAPITestCase):
+    def setUp(self):
+        self.match = self.make_match()
+        self.match.save()
+
+    def test_top_scorers_ignores_own_goals_and_counts_penalties(self):
+        from core.services import top_scorers
+
+        x = self.make_player(name="X", number=9)
+        y = self.make_player(name="Y", number=11)
+        models.Goal.objects.create(match=self.match, player=x, minute=10)
+        models.Goal.objects.create(match=self.match, player=x, minute=20, is_penalty=True)
+        models.Goal.objects.create(match=self.match, player=y, minute=30)
+        models.Goal.objects.create(match=self.match, player=y, minute=40, is_own_goal=True)
+        own_only = self.make_player(name="Z", number=3)
+        models.Goal.objects.create(match=self.match, player=own_only, minute=50, is_own_goal=True)
+
+        result = list(top_scorers(models.Goal.objects.all()))
+
+        self.assertEqual([p.name for p in result], ["X", "Y"])
+        self.assertEqual((result[0].goals_count, result[0].penalties_count), (2, 1))
+        self.assertEqual((result[1].goals_count, result[1].penalties_count), (1, 0))
+
+    def test_artilheiros_endpoint_paginated_and_filter_team(self):
+        for number in range(1, 8):
+            player = self.make_player(name=f"Brasileiro {number}", number=number)
+            models.Goal.objects.create(match=self.match, player=player, minute=number)
+        sérvio = self.make_player(name="Mitrovic", number=9, team=self.servia)
+        models.Goal.objects.create(match=self.match, player=sérvio, minute=60)
+        models.Goal.objects.create(match=self.match, player=sérvio, minute=61)
+
+        response = self.client.get("/api/player/artilheiros/")
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data["count"], 8)
+        self.assertEqual(len(response.data["results"]), 5)
+        self.assertEqual(
+            response.data["results"][0],
+            {"player": "Mitrovic", "team": "Sérvia", "goals": 2, "penalties": 0},
+        )
+
+        response = self.client.get("/api/player/artilheiros/", {"team": "brasil"})
+        self.assertEqual(response.data["count"], 7)

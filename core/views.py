@@ -2,8 +2,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
 
-from core import filters, models, serializers
+from core import filters, models, serializers, services
 
 
 class BaseViewSet(viewsets.ModelViewSet):
@@ -16,6 +17,11 @@ class TeamGroupViewSet(BaseViewSet):
     queryset = models.TeamGroup.objects.order_by("id")
     filterset_class = filters.TeamGroupFilter
     serializer_class = serializers.TeamGroupSerializer
+
+    @action(detail=True, methods=["get"], url_path="classificacao")
+    def classificacao(self, request, pk=None):
+        group = self.get_object()
+        return Response(services.group_standings(group))
 
 
 class TeamViewSet(BaseViewSet):
@@ -36,6 +42,16 @@ class PlayerViewSet(BaseViewSet):
         )
         page = self.paginate_queryset(players)
         serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
+
+    @action(detail=False, methods=["get"], url_path="artilheiros")
+    def artilheiros(self, request):
+        scorers = services.top_scorers(models.Goal.objects.all())
+        team = request.query_params.get("team")
+        if team:
+            scorers = scorers.filter(team__name__iexact=team)
+        page = self.paginate_queryset(scorers)
+        serializer = serializers.TopScorerSerializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
 
