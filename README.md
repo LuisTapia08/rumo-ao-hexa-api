@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/LuisTapia08/rumo-ao-hexa-api/actions/workflows/tests.yml/badge.svg)](https://github.com/LuisTapia08/rumo-ao-hexa-api/actions/workflows/tests.yml)
 
-🔗 Demo: _adicione o link após o deploy no Render_
+🔗 **Demo:** [rumo-ao-hexa-api.onrender.com/api/docs/](https://rumo-ao-hexa-api.onrender.com/api/docs/) (plano gratuito: a primeira requisição depois de um tempo parado pode levar até ~50 s)
 
 API REST com os dados reais da **Copa do Mundo de 2022**: grupos, seleções, técnicos, estádios, partidas, gols, classificação dos grupos e artilharia. O objetivo é servir de backend para um front-end futuro que acompanhe a campanha do Brasil rumo ao hexa.
 
