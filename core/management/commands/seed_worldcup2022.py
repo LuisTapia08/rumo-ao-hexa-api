@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.core.management.base import BaseCommand, CommandError
 from django.db import IntegrityError, transaction
 
@@ -40,10 +41,12 @@ class Command(BaseCommand):
                 if options["reset"]:
                     self.reset()
                 self.load(data)
-        except IntegrityError as exc:
+        except (IntegrityError, ValidationError) as exc:
             raise CommandError(
-                f"Os dados locais conflitam com o dataset da Copa 2022 ({exc}). "
-                "Rode com --reset para apagar os dados existentes e recarregar."
+                f"Falha ao carregar os dados da Copa 2022: {exc}. "
+                "Verifique se as migrações foram aplicadas "
+                "(`python manage.py migrate`); se o conflito for com dados "
+                "locais, rode com --reset."
             ) from exc
 
         self.stdout.write(

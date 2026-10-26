@@ -537,5 +537,44 @@ class SeedWorldCup2022ConflictTests(TestCase):
         with self.assertRaises(CommandError) as ctx:
             call_command("seed_worldcup2022", verbosity=0)
         self.assertIn("--reset", str(ctx.exception))
+        self.assertIn("UNIQUE constraint failed", str(ctx.exception))
         self.assertEqual(models.Match.objects.count(), 0)
         self.assertEqual(models.Team.objects.count(), 1)
+
+    def test_invalid_data_raises_command_error_and_rolls_back(self):
+        import json
+        import tempfile
+        from pathlib import Path
+
+        from django.test import override_settings
+
+        bad = {
+            "groups": [{"name": "Grupo A", "teams": ["A", "B"]}],
+            "teams": [
+                {"name": "A", "federation": "FA1", "coach": "Tec A"},
+                {"name": "B", "federation": "FB1", "coach": "Tec B"},
+            ],
+            "stadiums": [{"name": "Est", "city": "Cidade", "capacity": 1000}],
+            "matches": [
+                {
+                    "stage": "GROUP", "group": "Grupo A",
+                    "kickoff": "2022-11-20T19:00:00+03:00",
+                    "home": "A", "away": "A", "stadium": "Est",
+                    "home_score": 0, "away_score": 0,
+                    "home_penalties": None, "away_penalties": None,
+                    "goals": [],
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / "data").mkdir()
+            with open(Path(tmp) / "data" / "worldcup2022.json", "w", encoding="utf-8") as f:
+                json.dump(bad, f)
+            with override_settings(BASE_DIR=Path(tmp)):
+                with self.assertRaises(CommandError) as ctx:
+                    call_command("seed_worldcup2022", verbosity=0)
+        self.assertIn("diferente", str(ctx.exception))
+        self.assertIn("--reset", str(ctx.exception))
+        self.assertEqual(models.Team.objects.count(), 0)
+        self.assertEqual(models.TeamGroup.objects.count(), 0)
+        self.assertEqual(models.Match.objects.count(), 0)
